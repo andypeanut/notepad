@@ -14,9 +14,9 @@ namespace NotepadApp
 
         private void 열기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //사용자에게 열 파일을 선택 하게함
             openFileDialog1.FileName = "";
             openFileDialog1.Filter = "텍스트 문서(*.txt)|*.txt|모든파일|*.*";
+            //사용자에게 열 파일을 선택 하게함
             openFileDialog1.ShowDialog();
             if (openFileDialog1.FileName == "")
             {
@@ -40,8 +40,8 @@ namespace NotepadApp
                     }
                     else
                     {
+                    //파일을 저장
                         System.IO.File.WriteAllText(saveFileDialog1.FileName, tbContents.Text);
-                        //파일을 저장
                         saveFileDialog1.FileName = "";
                     }
                 }
