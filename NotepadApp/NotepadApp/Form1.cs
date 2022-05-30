@@ -7,16 +7,16 @@ namespace NotepadApp
             InitializeComponent();
         }
 
-        private void »õ·Î¸¸µé±âToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ìƒˆë¡œë§Œë“¤ê¸°ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tbContents.Text = "";
         }
 
-        private void ¿­±âToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ì—´ê¸°ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //»ç¿ëÀÚ¿¡°Ô ¿­ ÆÄÀÏÀ» ¼±ÅÃ ÇÏ°ÔÇÔ
+            //ì‚¬ìš©ìì—ê²Œ ì—´ íŒŒì¼ì„ ì„ íƒ í•˜ê²Œí•¨
             openFileDialog1.FileName = "";
-            openFileDialog1.Filter = "ÅØ½ºÆ® ¹®¼­(*.txt)|*.txt|¸ğµçÆÄÀÏ|*.*";
+            openFileDialog1.Filter = "í…ìŠ¤íŠ¸ ë¬¸ì„œ(*.txt)|*.txt|ëª¨ë“ íŒŒì¼|*.*";
             openFileDialog1.ShowDialog();
             if (openFileDialog1.FileName == "")
             {
@@ -24,16 +24,16 @@ namespace NotepadApp
             else
             {
                 tbContents.Text = System.IO.File.ReadAllText(openFileDialog1.FileName);
-                this.Text = "¸Ş¸ğÀå :" + openFileDialog1.FileName;
+                this.Text = "ë©”ëª¨ì¥ :" + openFileDialog1.FileName;
             }
         }
 
-        private void ÀúÀåToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ì €ì¥ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             {
                 if (saveFileDialog1.FileName == "")
                 {
-                    saveFileDialog1.Filter = "ÅØ½ºÆ® ¹®¼­(*.txt)|*.txt|¸ğµçÆÄÀÏ|*.*";
+                    saveFileDialog1.Filter = "í…ìŠ¤íŠ¸ ë¬¸ì„œ(*.txt)|*.txt|ëª¨ë“ íŒŒì¼|*.*";
                     saveFileDialog1.ShowDialog();
                     if (saveFileDialog1.FileName == "")
                     {
@@ -41,7 +41,7 @@ namespace NotepadApp
                     else
                     {
                         System.IO.File.WriteAllText(saveFileDialog1.FileName, tbContents.Text);
-                        //ÆÄÀÏÀ» ÀúÀå
+                        //íŒŒì¼ì„ ì €ì¥
                         saveFileDialog1.FileName = "";
                     }
                 }
@@ -52,17 +52,17 @@ namespace NotepadApp
             }
         }
 
-        private void ´Ù¸¥ÀÌ¸§À¸·ÎÀúÀåToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ë‹¤ë¥¸ì´ë¦„ìœ¼ë¡œì €ì¥ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Filter = "ÅØ½ºÆ® ¹®¼­(*.txt)|*.txt|¸ğµçÆÄÀÏ|*.*";
+            saveFileDialog1.Filter = "í…ìŠ¤íŠ¸ ë¬¸ì„œ(*.txt)|*.txt|ëª¨ë“ íŒŒì¼|*.*";
             saveFileDialog1.ShowDialog();
-            //»ç¿ëÀÚ¿¡°Ô ÀúÀåÇÒ ÆÄÀÏÀ» ¼±ÅÃÇÏ°ÔÇÔ
+            //ì‚¬ìš©ìì—ê²Œ ì €ì¥í•  íŒŒì¼ì„ ì„ íƒí•˜ê²Œí•¨
             if (saveFileDialog1.FileName != "")
             {
+            //íŒŒì¼ì„ ì €ì¥
                 System.IO.File.WriteAllText(saveFileDialog1.FileName, tbContents.Text);
                 saveFileDialog1.FileName = "";
             }
-            //ÆÄÀÏÀ» ÀúÀå
             else
             {
 
@@ -70,35 +70,35 @@ namespace NotepadApp
 
         }
 
-        private void ³¡³»±âToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ëë‚´ê¸°ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
-            //ÇÁ·Î±×·¥ Á¾·á
+            //í”„ë¡œê·¸ë¨ ì¢…ë£Œ
         }
 
-        private void ÀÚµ¿ÁÙ¹Ù²ŞToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ìë™ì¤„ë°”ê¿ˆToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tbContents.WordWrap = !tbContents.WordWrap;
         }
 
-        private void ±Û²ÃToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ê¸€ê¼´ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
             tbContents.Font = fontDialog1.Font; 
         }
 
-        private void »óÅÂÇ¥½ÃÁÙToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ìƒíƒœí‘œì‹œì¤„ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             statusStrip1.Visible = !statusStrip1.Visible;
         }
 
-        private void ¸Ş¸ğÀåÁ¤º¸ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ë©”ëª¨ì¥ì •ë³´ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             f2.ShowDialog();
         }
 
-        private void ¹è°æ»öToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ë°°ê²½ìƒ‰ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
             tbContents.BackColor = colorDialog1.Color;
@@ -106,8 +106,8 @@ namespace NotepadApp
 
         private void tbContents_TextChanged(object sender, EventArgs e)
         {
-            Line.Text = "ÁÙ¼ö : " + tbContents.Lines.Length;
-            Line2.Text = "´Ü¾î¼ö : " + tbContents.Text.Split(" ").Length;
+            Line.Text = "ì¤„ìˆ˜ : " + tbContents.Lines.Length;
+            Line2.Text = "ë‹¨ì–´ìˆ˜ : " + tbContents.Text.Split(" ").Length;
         }
     }
 }
